@@ -1,0 +1,10 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#050505"/>
+  <circle cx="840" cy="320" r="310" fill="#6EE7F9" opacity=".1"/>
+  <rect x="260" y="210" width="680" height="330" rx="34" fill="white" opacity=".06" stroke="white" stroke-opacity=".16"/>
+  <path d="M360 420C450 330 535 470 620 360C700 260 790 340 850 275" stroke="#F5DFB8" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="850" cy="275" r="22" fill="#EF4444"/>
+  <path d="M850 238V312M813 275H887" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+  <text x="92" y="112" fill="white" font-family="Inter,Arial" font-size="54" font-weight="700">Fraud Detection</text>
+  <text x="94" y="160" fill="#9CA3AF" font-family="Inter,Arial" font-size="24">Risk signals from imbalanced data</text>
+</svg>

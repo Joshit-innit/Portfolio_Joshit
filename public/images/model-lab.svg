@@ -1,0 +1,13 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#050505"/>
+  <circle cx="300" cy="180" r="260" fill="#6EE7F9" opacity=".11"/>
+  <circle cx="920" cy="430" r="310" fill="#A78BFA" opacity=".12"/>
+  <rect x="185" y="190" width="830" height="360" rx="42" fill="white" opacity=".055" stroke="white" stroke-opacity=".14"/>
+  <path d="M260 455C350 350 455 390 545 285C640 175 760 320 900 230" stroke="#F5DFB8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="white" opacity=".7">
+    <circle cx="260" cy="455" r="10"/><circle cx="545" cy="285" r="10"/><circle cx="900" cy="230" r="10"/>
+  </g>
+  <path d="M260 505H920M260 405H920M260 305H920" stroke="white" opacity=".08"/>
+  <text x="92" y="112" fill="white" font-family="Inter,Arial" font-size="54" font-weight="700">Model Lab</text>
+  <text x="94" y="160" fill="#9CA3AF" font-family="Inter,Arial" font-size="24">Clean data, measured models, useful insight</text>
+</svg>

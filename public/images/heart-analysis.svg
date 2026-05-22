@@ -1,0 +1,8 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#050505"/>
+  <circle cx="850" cy="320" r="330" fill="#A78BFA" opacity=".12"/>
+  <path d="M600 520C340 338 256 214 350 130C430 58 544 106 600 204C656 106 770 58 850 130C944 214 860 338 600 520Z" fill="#EF4444" opacity=".72"/>
+  <path d="M210 360H390L430 300L496 430L570 230L650 360H990" stroke="#F5DFB8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="92" y="112" fill="white" font-family="Inter,Arial" font-size="54" font-weight="700">Heart Analysis</text>
+  <text x="94" y="160" fill="#9CA3AF" font-family="Inter,Arial" font-size="24">Healthcare features, classification, clarity</text>
+</svg>
