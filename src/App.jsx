@@ -18,7 +18,13 @@ export default function App() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.15, smoothWheel: true, wheelMultiplier: 0.8 });
+    const lenis = new Lenis({
+      duration: 1.45,
+      smoothWheel: true,
+      wheelMultiplier: 0.72,
+      touchMultiplier: 1.35,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
     let frame;
     const raf = (time) => {
       lenis.raf(time);

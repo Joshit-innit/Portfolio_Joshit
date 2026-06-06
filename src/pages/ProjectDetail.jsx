@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import AmbientBackground from "../components/AmbientBackground.jsx";
 import CaseStudySections from "../components/CaseStudySections.jsx";
 import MagneticLink from "../components/MagneticLink.jsx";
+import MutualFundsInvestmentShowcase from "../components/MutualFundsInvestmentShowcase.jsx";
 import ProjectDNA from "../components/ProjectDNA.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import { getCaseStudy } from "../data/caseStudies.js";
@@ -65,7 +66,11 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      <CaseStudySections project={project} caseStudy={caseStudy} />
+      {project.id === "mutual-funds-analysis" ? (
+        <MutualFundsInvestmentShowcase />
+      ) : (
+        <CaseStudySections project={project} caseStudy={caseStudy} />
+      )}
 
       <section className="px-6 py-20">
         <div className="mx-auto max-w-7xl">

@@ -1,14 +1,14 @@
 [
   {
     "id": "mutual-funds-analysis",
-    "title": "Mutual Funds Analysis Project",
-    "category": "Financial Data Analytics",
-    "description": "A polished analytics system for understanding mutual fund performance, risk patterns, and investor-facing decision signals.",
-    "purpose": "This project studies mutual fund data to surface performance behavior, risk-return tradeoffs, and fund comparison insights that can help investors and analysts make clearer decisions.",
-    "techStack": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "SQL", "Power BI"],
-    "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Performance comparison", "Risk analysis", "Insights generation"],
-    "findings": ["Risk-adjusted comparison is more useful than return-only ranking.", "Category-level grouping reveals stronger investing context.", "Visual dashboards make fund patterns easier to communicate."],
-    "metrics": [{"label": "Focus", "value": "Risk"}, {"label": "Output", "value": "Insights"}, {"label": "Domain", "value": "Finance"}],
+    "title": "Mutual Funds Investment Platform",
+    "category": "Full-stack Fintech",
+    "description": "An intelligent fintech platform designed to simplify mutual fund investing through analytics, comparison tools, investor education, and advisor-driven insights.",
+    "purpose": "This platform helps users understand, compare, and explore mutual funds intelligently by combining financial education, role-based dashboards, analytics, risk understanding, and advisor support.",
+    "techStack": ["React", "Tailwind CSS", "Node.js", "APIs", "Authentication", "Docker", "Analytics", "Financial Calculations"],
+    "workflow": ["Research phase", "UI/UX design", "Frontend development", "Backend and APIs", "Deployment and optimization"],
+    "findings": ["Financial dashboards need clarity before complexity.", "Role-based flows make fintech platforms easier to trust.", "Docker and API-driven structure improve production readiness."],
+    "metrics": [{"label": "Type", "value": "Fintech"}, {"label": "Roles", "value": "3"}, {"label": "Focus", "value": "Invest"}],
     "github": "https://github.com/Joshit-innit/Mutual-Funds-",
     "image": "/images/mutual-funds.svg"
   },
