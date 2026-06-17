@@ -262,6 +262,68 @@ const cases = {
     learnings: ["Interpretability is a technical feature.", "Scaled features improve linear model behavior.", "Health projects need careful communication."],
     future: ["Add ROC-AUC.", "Add feature coefficient explanation.", "Add recall-optimized thresholding."]
   },
+  "customer-churn": {
+    tagline: "A business classification case study for predicting which customers are likely to leave, using model comparison and imbalance-aware preprocessing.",
+    repositoryEvidence: "Notebook imports kagglehub, imblearn over-sampling, LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, XGBClassifier, confusion_matrix, classification_report, and pickle.",
+    dataset: "Customer churn dataset loaded through the notebook workflow, with customer behavior and account features used for churn-risk prediction.",
+    modelFamily: "Logistic Regression, Decision Tree, Random Forest, and XGBoost Classification",
+    chartType: "classification",
+    story: [
+      "Customer churn is a practical business problem because losing existing customers is often more expensive than acquiring new ones.",
+      "This project studies customer behavior patterns and trains classifiers that can flag churn risk before the customer leaves.",
+      "The workflow is valuable because it combines business framing, class imbalance handling, model comparison, and evaluation outputs that can support retention strategy."
+    ],
+    workflow: [
+      { title: "Business framing", detail: "Define churn as a retention-risk problem where predictions should help teams prioritize intervention.", research: "The repository README classifies this notebook under Business / Classification." },
+      { title: "Data intake", detail: "Load the churn dataset, inspect customer/account fields, and prepare the target variable for classification.", research: "The notebook imports kagglehub, pandas, numpy, seaborn, and matplotlib for dataset access and exploration." },
+      { title: "Preprocessing and resampling", detail: "Encode categorical variables, split the data, and address class imbalance before model training.", research: "The notebook imports sklearn.preprocessing, train-test split utilities, and imblearn.over_sampling." },
+      { title: "Model comparison", detail: "Train multiple classifiers to compare baseline, tree-based, ensemble, and boosted behavior.", research: "The notebook uses LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, and XGBClassifier." },
+      { title: "Evaluation and export", detail: "Use accuracy, confusion matrix, and classification report to understand prediction quality, then prepare the model for reuse.", research: "The notebook imports accuracy_score, confusion_matrix, classification_report, and pickle." }
+    ],
+    architecture: ["Customer data", "Preprocessing", "Resampling", "Model comparison", "Classification report", "Retention insight"],
+    insights: [
+      "Churn models should be evaluated with precision and recall, not accuracy alone.",
+      "Imbalance handling is important because churners are often a smaller but more valuable class.",
+      "Model comparison helps separate stable business signal from algorithm-specific behavior."
+    ],
+    learnings: [
+      "Business ML projects need a clear operational reason for every prediction.",
+      "Class imbalance changes what a good model means.",
+      "Exporting a trained model introduces deployment and reproducibility thinking."
+    ],
+    future: ["Add ROC-AUC and precision-recall curves.", "Add feature importance for retention drivers.", "Create a retention-action dashboard for high-risk customers."]
+  },
+  "linear-regressions": {
+    tagline: "A fundamentals-focused regression notebook that connects linear relationships, model fitting, R2 score, and mean absolute error.",
+    repositoryEvidence: "Notebook imports numpy, pandas, matplotlib, scipy/random utilities, LinearRegression, r2_score, and mean_absolute_error.",
+    dataset: "Foundational regression practice data, including generated or simple structured examples for understanding linear model behavior.",
+    modelFamily: "Linear Regression",
+    chartType: "regression",
+    story: [
+      "Linear Regression is one of the most important foundations in machine learning because it teaches how features map to a continuous target.",
+      "This notebook focuses on the mechanics of fitting a line, evaluating fit quality, and interpreting error.",
+      "The project is intentionally fundamental: it strengthens the mental model behind later regression projects like insurance, car prices, gold prices, and sales forecasting."
+    ],
+    workflow: [
+      { title: "Regression setup", detail: "Prepare simple numeric data and define a continuous target for prediction.", research: "The notebook imports numpy, pandas, random, scipy, and matplotlib for data setup and visualization." },
+      { title: "Visual intuition", detail: "Plot the relationship between variables so the regression task is visible before modeling.", research: "Matplotlib is used in the notebook for plotting." },
+      { title: "Train-test split", detail: "Separate training and evaluation data to avoid judging the model only on seen samples.", research: "The notebook imports sklearn.model_selection utilities." },
+      { title: "Model fitting", detail: "Train a LinearRegression model and inspect how it captures the trend.", research: "The notebook imports LinearRegression from sklearn.linear_model." },
+      { title: "Metric interpretation", detail: "Use R2 for fit quality and MAE for practical error understanding.", research: "The notebook imports r2_score and mean_absolute_error." }
+    ],
+    architecture: ["Numeric data", "Plot relationship", "Train-test split", "LinearRegression", "R2 score", "MAE interpretation"],
+    insights: [
+      "Simple regression makes model behavior easier to see and explain.",
+      "R2 and MAE answer different questions: fit quality versus practical error.",
+      "Foundational notebooks improve the quality of later applied ML projects."
+    ],
+    learnings: [
+      "Regression starts with understanding the shape of the data.",
+      "Evaluation metrics are part of storytelling, not just code output.",
+      "Linear baselines are useful even when later models become more complex."
+    ],
+    future: ["Add residual plots.", "Compare Ridge and Lasso regularization.", "Use this as a baseline template for future regression projects."]
+  },
   "movie-recommendation": {
     tagline: "A content-based recommender that vectorizes movie metadata and ranks similar titles with cosine similarity.",
     repositoryEvidence: "Notebook imports difflib, TfidfVectorizer, and cosine_similarity, reading movies.csv.",

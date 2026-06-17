@@ -22,7 +22,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Feature relationships matter more than raw trend chasing.", "Tree-based models can capture non-linear price behavior.", "Evaluation discipline keeps predictions grounded."],
     "metrics": [{"label": "Model", "value": "XGBoost"}, {"label": "Type", "value": "Regression"}, {"label": "Signal", "value": "Market"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/gold-prediction.svg"
   },
   {
@@ -35,7 +35,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["EDA is crucial for understanding medically meaningful patterns.", "Classification metrics need context beyond accuracy.", "Visualization improves trust in model behavior."],
     "metrics": [{"label": "Type", "value": "Classification"}, {"label": "Domain", "value": "Health"}, {"label": "Goal", "value": "Risk"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/heart-analysis.svg"
   },
   {
@@ -48,7 +48,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature scaling", "K-Means modeling", "Cluster evaluation", "Insights generation"],
     "findings": ["Segmentation turns noisy behavior into actionable groups.", "Scaling strongly affects clustering quality.", "Business labels make model outputs usable."],
     "metrics": [{"label": "Model", "value": "K-Means"}, {"label": "Type", "value": "Clustering"}, {"label": "Use", "value": "Strategy"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/customer-segmentation.svg"
   },
   {
@@ -61,7 +61,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Precision and recall tradeoffs matter deeply in fraud systems.", "Class imbalance changes how success should be measured.", "Detection work needs explainable thresholds."],
     "metrics": [{"label": "Focus", "value": "Fraud"}, {"label": "Type", "value": "Classification"}, {"label": "Risk", "value": "High"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/fraud-detection.svg"
   },
   {
@@ -74,7 +74,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Store and product attributes shape sales outcomes.", "Feature preparation improves forecast stability.", "Forecasting supports smarter inventory decisions."],
     "metrics": [{"label": "Domain", "value": "Retail"}, {"label": "Type", "value": "Regression"}, {"label": "Output", "value": "Forecast"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/bigmart-sales.svg"
   },
   {
@@ -87,7 +87,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Passenger attributes can reveal strong survival patterns.", "Clean feature encoding improves model behavior.", "Simple baselines are valuable before complex models."],
     "metrics": [{"label": "Type", "value": "Classify"}, {"label": "Dataset", "value": "Titanic"}, {"label": "Goal", "value": "Survival"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -100,7 +100,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Feature distributions influence prediction quality.", "Regression framing supports business estimation.", "Clear error metrics make outcomes understandable."],
     "metrics": [{"label": "Domain", "value": "Insurance"}, {"label": "Type", "value": "Predict"}, {"label": "Output", "value": "Estimate"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -113,7 +113,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Vehicle features shape price variance strongly.", "Outliers need careful treatment in regression.", "Readable visuals improve market interpretation."],
     "metrics": [{"label": "Domain", "value": "Auto"}, {"label": "Type", "value": "Regression"}, {"label": "Goal", "value": "Price"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -126,7 +126,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Chemical attributes create measurable quality signals.", "Correlation plots expose useful feature relationships.", "Model metrics help translate quality into decisions."],
     "metrics": [{"label": "Domain", "value": "Quality"}, {"label": "Signal", "value": "Chemistry"}, {"label": "Goal", "value": "Score"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -139,7 +139,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Healthcare classification needs metric-aware evaluation.", "Feature scaling and cleaning affect reliability.", "Risk detection benefits from transparent interpretation."],
     "metrics": [{"label": "Domain", "value": "Health"}, {"label": "Type", "value": "Classify"}, {"label": "Goal", "value": "Detect"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -152,7 +152,7 @@
     "workflow": ["Data collection", "Data cleaning", "EDA", "Feature engineering", "Model building", "Evaluation", "Insights generation"],
     "findings": ["Small datasets need careful validation.", "Signal features can support strong binary separation.", "Simple models often establish useful baselines."],
     "metrics": [{"label": "Data", "value": "Sonar"}, {"label": "Type", "value": "Binary"}, {"label": "Goal", "value": "Detect"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -165,7 +165,7 @@
     "workflow": ["Data collection", "Data cleaning", "Encoding", "Resampling", "Model comparison", "Evaluation", "Model export"],
     "findings": ["Healthcare screening models need clean categorical handling.", "Class imbalance affects evaluation confidence.", "Tree ensembles are useful for mixed feature spaces."],
     "metrics": [{"label": "Models", "value": "3"}, {"label": "Metric", "value": "F1"}, {"label": "Domain", "value": "Health"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -178,7 +178,33 @@
     "workflow": ["Data loading", "Data cleaning", "EDA", "Feature scaling", "Model training", "Accuracy review", "Classification report"],
     "findings": ["Scaled numeric diagnostic features support strong linear baselines.", "Healthcare models must be judged beyond simple accuracy.", "Classification reports communicate precision and recall tradeoffs."],
     "metrics": [{"label": "Model", "value": "LogReg"}, {"label": "Type", "value": "Binary"}, {"label": "Domain", "value": "Health"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
+    "image": "/images/model-lab.svg"
+  },
+  {
+    "id": "customer-churn",
+    "title": "Customer Churn Machine Learning",
+    "category": "Business Classification",
+    "description": "A customer retention classification project that predicts churn risk using business/customer behavior features and multiple ML models.",
+    "purpose": "Built to understand how machine learning can help businesses identify customers likely to leave, evaluate retention risk, and support proactive decision-making.",
+    "techStack": ["Python", "Pandas", "NumPy", "Seaborn", "Scikit-learn", "XGBoost", "Imbalanced-learn"],
+    "workflow": ["Data loading", "EDA", "Preprocessing", "Resampling", "Model comparison", "Confusion matrix", "Model export"],
+    "findings": ["Churn prediction needs more than accuracy because false negatives are expensive.", "Imbalance handling improves confidence in retention-risk classification.", "Comparing multiple models gives a stronger baseline than trusting one algorithm."],
+    "metrics": [{"label": "Models", "value": "4"}, {"label": "Focus", "value": "Churn"}, {"label": "Metric", "value": "F1"}],
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
+    "image": "/images/model-lab.svg"
+  },
+  {
+    "id": "linear-regressions",
+    "title": "Linear Regressions",
+    "category": "Regression Fundamentals",
+    "description": "A foundational regression notebook focused on linear relationships, model fitting, R2 score, and mean absolute error.",
+    "purpose": "Created to strengthen regression fundamentals by practicing simple model fitting, train-test evaluation, and error interpretation with Linear Regression.",
+    "techStack": ["Python", "NumPy", "Pandas", "Matplotlib", "Scikit-learn", "Linear Regression"],
+    "workflow": ["Synthetic/data setup", "Visualization", "Train-test split", "Linear model fitting", "R2 evaluation", "MAE review"],
+    "findings": ["Regression fundamentals make advanced ML workflows easier to reason about.", "R2 explains fit quality while MAE explains practical prediction error.", "Visualizing linear relationships helps connect math intuition with model behavior."],
+    "metrics": [{"label": "Model", "value": "Linear"}, {"label": "Metric", "value": "R2"}, {"label": "Error", "value": "MAE"}],
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -191,7 +217,7 @@
     "workflow": ["Data loading", "Feature selection", "Text vectorization", "Similarity matrix", "Title matching", "Recommendation ranking"],
     "findings": ["Text features can power useful recommendation baselines.", "Fuzzy matching improves user input tolerance.", "Similarity ranking turns metadata into a usable discovery system."],
     "metrics": [{"label": "Method", "value": "TF-IDF"}, {"label": "Signal", "value": "Text"}, {"label": "Output", "value": "Top-N"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -204,7 +230,7 @@
     "workflow": ["Data loading", "Data balancing", "Cleaning", "Feature encoding", "Random Forest training", "Evaluation", "Model export"],
     "findings": ["Weather prediction needs robust preprocessing before modeling.", "Resampling can improve class balance.", "Confusion matrices help explain false rain/no-rain decisions."],
     "metrics": [{"label": "Model", "value": "RF"}, {"label": "Type", "value": "Weather"}, {"label": "Metric", "value": "Recall"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   },
   {
@@ -217,7 +243,7 @@
     "workflow": ["Data loading", "Label encoding", "Train-test split", "TF-IDF vectorization", "Model training", "Accuracy evaluation"],
     "findings": ["Text vectorization transforms raw email copy into model-ready features.", "Logistic Regression is a strong baseline for sparse NLP features.", "Spam detection needs attention to false positives."],
     "metrics": [{"label": "Method", "value": "TF-IDF"}, {"label": "Model", "value": "LogReg"}, {"label": "Type", "value": "NLP"}],
-    "github": "https://github.com/Joshit-innit/DataAnalystics_journey",
+    "github": "https://github.com/Joshit-innit/MachineLearningJourney",
     "image": "/images/model-lab.svg"
   }
 ]
