@@ -1,24 +1,10 @@
-import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [react()],
-  build: {
-    chunkSizeWarningLimit: 1200,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          three: ["three", "@react-three/fiber", "@react-three/drei"],
-          motion: ["framer-motion"],
-          react: ["react", "react-dom", "react-router-dom"]
-        }
-      }
-    }
-  },
-  server: {
-    port: 5173,
-    proxy: {
-      "/api": "http://localhost:4000"
-    }
-  }
+  plugins: [react(), tailwindcss()],
+  // "@/..." matches the import paths Watermelon UI components ship with
+  resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } }
 });
