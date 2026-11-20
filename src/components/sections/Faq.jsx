@@ -9,7 +9,16 @@ const qa = [
   ["What do you build best?", <>Java and Spring Boot backends split into services, with service discovery and circuit breakers so one failure doesn't take the rest down. And ML models wired into real apps.</>],
   ["Where do you study?", <>B.Tech in Computer Science at KL University, with a 9.34 GPA.</>],
   ["Do you put in the reps?", <>150+ problems solved on <a href={links.leetcode} {...ext}>LeetCode</a>, all in Java.</>],
-  ["Anything certified?", <>{certificates.map(([t, by, f], i) => <span key={t}>{i ? "; " : ""}<a href={f} {...ext}>{t}</a> ({by})</span>)}</>]
+  ["Anything certified?", (
+    <ul className="divide-y divide-line">
+      {certificates.map(([t, by, f]) => (
+        <li key={t} className="py-3 first:pt-0 last:pb-0">
+          <a href={f} {...ext}>{t}</a>
+          <span className="mt-1 block font-mono text-[0.8rem]">{by}</span>
+        </li>
+      ))}
+    </ul>
+  )]
 ];
 
 export default function Faq() {

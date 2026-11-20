@@ -1,14 +1,12 @@
-import { ArrowDown } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useState } from "react";
-import { links } from "../../data.js";
-import { ease } from "../motion.jsx";
-import { CopyConfirm } from "../watermelon/copy-confirm";
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { ease, Morph } from "../motion.jsx";
 
 const nav = [
   ["Work", "#work"],
   ["About", "#about"],
-  ["Résumé", "/documents/joshit-tammana-resume.pdf"],
+  ["SDE résumé", "/documents/tammana-joshit-sde-resume.pdf"],
+  ["ML résumé", "/documents/tammana-joshit-ml-resume.pdf"],
   ["Contact", "#contact"]
 ];
 const roles = ["software engineer", "java backend", "machine learning"];
@@ -50,16 +48,22 @@ function Typed() {
 }
 
 export default function Hero() {
+  const ref = useRef(null);
+  // names and photo come in while the hero is mostly on screen, and fly back out when you scroll past it
+  const shown = useInView(ref, { amount: 0.5 });
+  const state = shown ? "in" : "out";
+
   return (
     <header id="top">
       {/* the portrait is a transparent cut-out (keyed from its flat indigo), so the name shows around it */}
-      <section className="relative isolate h-[100svh] min-h-[40rem] overflow-hidden bg-[#5663d5] text-white">
+      <Morph enter={false}>
+      <section ref={ref} className="relative isolate h-[100svh] min-h-[40rem] overflow-hidden bg-[#5663d5] text-white">
         <nav className="wrap relative z-30 flex items-center justify-between py-6 text-[0.95rem]">
           <a href="#top" className="font-medium">Tammana Joshit</a>
           <ul className="flex gap-5 sm:gap-8">
             {nav.map(([label, href]) => (
-              <li key={label} className={label === "About" ? "max-sm:hidden" : undefined}>
-                <a href={href} className="underline-offset-4 hover:underline">{label}</a>
+              <li key={label} className={label === "About" || label === "Work" ? "max-sm:hidden" : undefined}>
+                <a href={href} {...(href.endsWith(".pdf") && { target: "_blank", rel: "noreferrer" })} className="underline-offset-4 hover:underline">{label}</a>
               </li>
             ))}
           </ul>
@@ -69,9 +73,10 @@ export default function Hero() {
           {/* behind the photo */}
           <motion.span
             aria-hidden
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease }}
+            initial="out"
+            animate={state}
+            variants={{ out: { opacity: 0, x: "-110%" }, in: { opacity: 1, x: 0 } }}
+            transition={{ duration: 1.4, ease }}
             className="absolute top-[13%] left-6 z-0 text-[clamp(5.5rem,22vw,9rem)] sm:left-10 lg:top-[17%] lg:left-[4vw] lg:text-[clamp(8rem,15vw,16rem)]"
           >
             Tammana
@@ -79,9 +84,10 @@ export default function Hero() {
           {/* in front of the photo */}
           <motion.span
             aria-hidden
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease }}
+            initial="out"
+            animate={state}
+            variants={{ out: { opacity: 0, x: "110%" }, in: { opacity: 1, x: 0 } }}
+            transition={{ duration: 1.4, delay: 0.2, ease }}
             className="absolute right-6 bottom-[4%] z-20 text-[clamp(5.5rem,22vw,9rem)] sm:right-10 lg:right-[4vw] lg:bottom-[5%] lg:text-[clamp(8rem,15vw,16rem)]"
           >
             Joshit
@@ -91,9 +97,10 @@ export default function Hero() {
         <motion.img
           src="/work/portrait-cutout.png"
           alt="Tammana Joshit"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1, ease }}
+          initial="out"
+          animate={state}
+          variants={{ out: { opacity: 0, y: "100%" }, in: { opacity: 1, y: 0 } }}
+          transition={{ duration: 1.5, delay: 0.1, ease }}
           className="absolute bottom-0 left-1/2 z-10 h-[62%] w-auto max-w-none -translate-x-1/2 lg:h-[84%]"
         />
 
@@ -106,24 +113,35 @@ export default function Hero() {
           open to internships · bengaluru
         </p>
       </section>
+      </Morph>
 
-      <div className="wrap grid gap-10 py-20 sm:py-24 lg:grid-cols-2 lg:gap-16">
-        <p className="display text-fg text-[clamp(2.25rem,4.5vw,4rem)] leading-[0.95]">
-          Backends that hold up. Models that leave the notebook.
-        </p>
-        <div>
-          <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            I'm a computer science student at KL University. I build backend services with Java and Spring Boot, and I turn machine learning models into working applications.
+      <Morph>
+        {/* fills one screen: headline across the top, the who-am-i row underneath */}
+        <div className="wrap flex min-h-[100svh] flex-col justify-center gap-14 py-20 lg:gap-20">
+          <p className="display text-fg text-[clamp(3.25rem,8vw,9.5rem)] leading-[0.88]">
+            Backends that <em className="serif whitespace-nowrap text-gold">hold up.</em>
+            <br />
+            Models that <em className="serif text-brand">leave the notebook.</em>
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#work" className="btn bg-gold text-ink hover:bg-bone">
-              See the work <ArrowDown size={16} strokeWidth={1.5} />
-            </a>
-            <CopyConfirm value={links.email} />
+          <div className="grid gap-8 border-t border-line pt-10 lg:grid-cols-[4fr_8fr] lg:gap-16">
+            <div>
+              <h2 className="serif text-gold text-[clamp(2.75rem,5vw,4.5rem)] leading-none">Who am I?</h2>
+              <p className="mt-5 flex items-center gap-2 font-mono text-[0.85rem] text-muted">
+                <span aria-hidden className="size-2 animate-pulse rounded-full bg-gold motion-reduce:animate-none" />
+                open to internships · bengaluru, on-site or hybrid
+              </p>
+            </div>
+            <div className="grid gap-6 text-lg leading-relaxed sm:grid-cols-2 sm:gap-10 lg:text-xl">
+              <p className="text-fg/90">
+                I'm Joshit, a computer science student at <span className="text-fg">KL University</span> who likes building things people actually use. I write backend services in Java and Spring Boot, and I take machine learning models out of notebooks and into real apps.
+              </p>
+              <p className="text-muted">
+                So far that's an e-commerce store on Spring Boot microservices, a mutual fund platform with dashboards for investors and advisors, and an app that finds where any film is streaming. <span className="text-fg">I don't give up until it works.</span>
+              </p>
+            </div>
           </div>
-          <p className="mt-6 text-[0.95rem] text-muted">Open to internships · Bengaluru, on-site or hybrid</p>
         </div>
-      </div>
+      </Morph>
     </header>
   );
 }

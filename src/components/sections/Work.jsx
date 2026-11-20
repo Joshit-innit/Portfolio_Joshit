@@ -5,7 +5,6 @@ import { work } from "../../data.js";
 
 const featured = ["NutriNation", "FindMyMovie", "MutualifyX"].map((t) => work.find((p) => p.title === t));
 const landing = [-5, 2, -3]; // final tilt of each card on the table
-const host = (url) => new URL(url).host;
 
 function useWide() {
   const q = "(min-width: 64rem) and (min-height: 44rem)";
@@ -82,10 +81,14 @@ function Card({ p }) {
         <p className="font-mono text-[0.8rem] text-muted">{p.kind} · {p.year}</p>
         <h3 className="display mt-3 text-gold text-5xl">{p.title}</h3>
         <p className="mt-3 line-clamp-3 text-[0.95rem] leading-relaxed text-muted">{p.summary}</p>
-        <p className="mt-5 flex items-center gap-2 border-t border-line pt-4 text-[0.95rem] font-medium">
-          {host(p.live)}
-          <ArrowUpRight size={16} strokeWidth={1.5} className="text-muted transition-colors duration-150 group-hover:text-gold" />
-        </p>
+        <div className="mt-5 border-t border-line pt-5">
+          <span className="inline-flex items-center gap-3 rounded-full bg-gold py-1.5 pr-1.5 pl-5 text-[0.95rem] font-medium text-ink transition-colors duration-150 group-hover:bg-bone">
+            Check it out
+            <span className="grid size-8 place-items-center rounded-full bg-ink text-gold transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRight size={16} strokeWidth={1.75} />
+            </span>
+          </span>
+        </div>
       </div>
     </a>
   );
