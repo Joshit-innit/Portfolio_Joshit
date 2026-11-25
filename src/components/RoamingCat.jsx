@@ -88,7 +88,8 @@ export default function RoamingCat() {
       units = [...document.querySelectorAll("a, button")].filter((e) => {
         if (e.closest("[data-cat], [data-cat-skip]")) return false;
         const cs = getComputedStyle(e);
-        return cs.display !== "inline" && (e._dx || cs.translate === "none"); // never fight an element's own translate
+        // only small boxes (chips, buttons) move whole; wide ones like full-width list rows part their words instead
+        return cs.display !== "inline" && e.getBoundingClientRect().width <= 320 && (e._dx || cs.translate === "none"); // never fight an element's own translate
       });
       unitSet = new Set(units);
       // boxes in a list share a row: group by the list, not each <li>
@@ -139,14 +140,22 @@ export default function RoamingCat() {
         const r = it.getBoundingClientRect();
         if (r.top >= c.B || r.bottom <= c.T) continue;
         const left = r.left - (parseFloat(getComputedStyle(it).translate) || 0);
-        const key = it._block;
-        if (!groups.has(key)) groups.set(key, new Map());
-        const lines = groups.get(key), line = Math.round(r.top / 6);
-        if (!lines.has(line)) lines.set(line, []);
-        lines.get(line).push({ it, left, right: left + r.width });
+        if (!groups.has(it._block)) groups.set(it._block, []);
+        groups.get(it._block).push({ it, left, right: left + r.width, top: r.top, bottom: r.bottom });
+      }
+      // lines = items whose heights overlap, so mixed font sizes sharing a baseline count as one line
+      const rows = [];
+      for (const list of groups.values()) {
+        list.sort((p, q) => p.top - q.top);
+        let row = null;
+        for (const o of list) {
+          const mid = (o.top + o.bottom) / 2;
+          if (row && mid < row.bottom && mid > row.top) { row.items.push(o); row.bottom = Math.max(row.bottom, o.bottom); }
+          else rows.push((row = { top: o.top, bottom: o.bottom, items: [o] }));
+        }
       }
       // a line moves only if the cat actually touches it; each side then shifts rigidly by just enough to clear the cat
-      for (const lines of groups.values()) for (const row of lines.values()) {
+      for (const { items: row } of rows) {
         if (!row.some((o) => o.left < c.R + 4 && o.right > c.L - 4)) continue;
         // something already sliding keeps its direction, so an item centred under the cat doesn't flip back and forth
         const sorted = [...row].sort((p, q) => p.left - q.left);
