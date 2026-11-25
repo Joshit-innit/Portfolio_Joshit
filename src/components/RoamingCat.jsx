@@ -298,7 +298,7 @@ function Sitting() {
 function Licking() {
   return (
     <g>
-      <path className="cat-tail" d="M34 80 C 20 84, 10 74, 14 62" stroke={ORANGE} strokeWidth="7" fill="none" strokeLinecap="round" />
+      <path d="M34 80 C 20 84, 10 74, 14 62" stroke={ORANGE} strokeWidth="7" fill="none" strokeLinecap="round" />
       <ellipse cx="50" cy="62" rx="22" ry="20" fill={ORANGE} />
       <path d="M38 48 q4 6 0 12 M48 44 q4 7 0 14" stroke={DARK} strokeWidth="2.5" fill="none" strokeLinecap="round" />
       <line x1="64" y1="66" x2="64" y2="82" stroke={ORANGE} strokeWidth="7" strokeLinecap="round" />
@@ -308,7 +308,7 @@ function Licking() {
         <line x1="48" y1="70" x2="84" y2="20" stroke={ORANGE} strokeWidth="9" strokeLinecap="round" />
         <ellipse cx="86" cy="17" rx="6" ry="4.5" fill={CREAM} transform="rotate(-50 86 17)" />
       </g>
-      <g className="cat-lickhead">
+      <g className="cat-lick">
         <Head x={58} y={42} tilt={-35} eyes="closed" />
         <g transform="rotate(-35 70 40)"><ellipse className="cat-tongue" cx="70" cy="40" rx="2.6" ry="4" fill={PINK} /></g>
       </g>
