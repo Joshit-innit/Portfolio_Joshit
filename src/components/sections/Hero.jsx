@@ -37,7 +37,8 @@ function Typed() {
   }, [n, del, word, i, reduce]);
 
   return (
-    <p className="font-mono text-[clamp(1.125rem,2.1vw,2rem)]">
+    // data-cat-skip: this text changes every few ms, so the roaming cat must not split it into words
+    <p data-cat-skip className="font-mono text-[clamp(1.125rem,2.1vw,2rem)]">
       <span className="sr-only">{roles.join(", ")}</span>
       <span aria-hidden>
         &gt; {reduce ? word : word.slice(0, n)}

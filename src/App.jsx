@@ -6,6 +6,7 @@ import Hero from "./components/sections/Hero.jsx";
 import Skills from "./components/sections/Skills.jsx";
 import Work from "./components/sections/Work.jsx";
 import { Morph } from "./components/motion.jsx";
+import RoamingCat from "./components/RoamingCat.jsx";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Morph className="bg-surface"><Faq /></Morph>
       </main>
       <Morph exit={false}><Contact /></Morph>
+      <RoamingCat />
     </MotionConfig>
   );
 }
