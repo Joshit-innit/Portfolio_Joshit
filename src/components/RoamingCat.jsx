@@ -154,7 +154,7 @@ export default function RoamingCat() {
           else rows.push((row = { top: o.top, bottom: o.bottom, items: [o] }));
         }
       }
-      // a line moves only if the cat actually touches it; each side then shifts rigidly by just enough to clear the cat
+      // a line moves only if the cat actually touches it, and only by just enough to clear the cat
       for (const { items: row } of rows) {
         if (!row.some((o) => o.left < c.R + 4 && o.right > c.L - 4)) continue;
         // something already sliding keeps its direction, so an item centred under the cat doesn't flip back and forth
@@ -166,7 +166,17 @@ export default function RoamingCat() {
         while (k < sorted.length && sorted.at(-1).right + needR(k) > innerWidth - 8) k++;
         while (k > 0 && sorted[0].left - needL(k) < 8 && sorted.at(-1).right + needR(k - 1) <= innerWidth - 8) k--;
         const R = Math.min(240, needR(k)), L = Math.min(240, needL(k));
-        sorted.forEach((o, i) => (o.it._to = i < k ? -L : R));
+        // push outward like a nudge passed word to word: a phrase moves together, but a wide gap (a column gap)
+        // soaks it up, so text away from the cat stays put
+        const pass = (shift, gap) => (gap > 16 ? Math.max(0, shift - (gap - 8)) : shift);
+        for (let i = k, sh = R; i < sorted.length; i++) {
+          if (i > k) sh = pass(sh, sorted[i].left - sorted[i - 1].right);
+          sorted[i].it._to = sh;
+        }
+        for (let i = k - 1, sh = L; i >= 0; i--) {
+          if (i < k - 1) sh = pass(sh, sorted[i + 1].left - sorted[i].right);
+          sorted[i].it._to = -sh;
+        }
       }
       for (const u of units) {
         // the class swaps in a translate transition; drop it once settled so the link's own hover transitions return
