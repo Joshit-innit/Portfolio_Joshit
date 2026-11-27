@@ -106,17 +106,12 @@ export const work = [
 ];
 
 export const archive = [
-  ["2026", "YouTube Comment Analysis", "Sentiment, toxicity and spam for any video's comments. Classifier trained on 550K+ comments, ~94% accuracy", "Python", "https://commentsentimentanalysis.streamlit.app/", "data"],
+  ["2026", "NutriNation", "Dry fruits store: Next.js storefront and admin dashboard on Spring Boot microservices", "TS · Java", "DryNutsWebsite", "web"],
   ["2026", "Student Performance", "Predicts exam scores: a Spring Boot API calling a scikit-learn model through a Python service", "Java · Python", "StudentPerformanceDashBoardMachineLearning", "backend"],
+  ["2026", "YouTube Comment Analysis", "Sentiment, toxicity and spam for any video's comments. Classifier trained on 550K+ comments, ~94% accuracy", "Python", "YoutubeCommentAnalysis", "data"],
+  ["2025–26", "MutualifyX", "Mutual fund platform with role-based dashboards for investors, advisors and admins", "JavaScript", "MutualifyApp", "web"],
   ["2026", "PrimeTrade Analysis", "How the Fear & Greed Index changes the way people trade crypto, across 211,218 trades", "Python", "PrimeTradeAnalysis", "data"],
-  ["2026", "SOA Microservices", "Spring Boot microservices with an API gateway and Eureka service discovery", "Java", "soa-microservices-deploy", "backend"],
-  ["2026", "Retail Management", "REST API for products, customers and orders with Spring Boot and MySQL", "Java", "Retail-management-System", "backend"],
-  ["2026", "Community Center", "Full-stack app with Docker and a CI/CD pipeline on GitHub Actions", "Java · JS", "community-center-management", "web"],
-  ["2026", "AI Dresser", "Virtual try-on prototype using the Gemini API", "TypeScript", "Ai-dresser", "web"],
-  ["2026", "IPL 2024 Analysis", "Exploratory data analysis of the 2024 IPL season with pandas", "Python", "IPL2024_Match_Analysis", "data"],
-  ["2026", "Warehouse Management", "Inventory management system in Java and JDBC", "Java", "WareHouse_Management", "backend"],
-  ["2025", "BharatVihari", "MERN stack site about Indian festivals and traditions", "JavaScript", "BharatVihari", "web"],
-  ["ongoing", "DSAJourney", "150+ LeetCode solutions in Java", "Java", "DSAJourney", "backend"]
+  ["2026", "FindMyMovie", "Shows where a film streams, rents or sells, with a Gemini-powered search assistant", "TypeScript", "FindMyMovie", "web"]
 ].map(([year, name, note, lang, repo, cat]) => ({ year, name, note, lang, cat, href: repo.startsWith("http") ? repo : `${gh}/${repo}` }));
 
 export const toolbox = [
