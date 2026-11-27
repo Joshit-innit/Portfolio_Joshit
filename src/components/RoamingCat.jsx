@@ -76,7 +76,7 @@ export default function RoamingCat() {
     addEventListener("pointercancel", onUp);
     addEventListener("scroll", onScroll, { passive: true });
 
-    // ---- text the cat touches makes room. Paragraph text is split into word spans; boxed links and
+    // ---- text the cat touches makes room. Paragraph text is split into letter spans; boxed links and
     // buttons (anything not display:inline) move whole, so the box goes with its label.
     const splits = []; // { pieces, original, words, near }
     const splitDone = new WeakSet();
@@ -102,19 +102,26 @@ export default function RoamingCat() {
         if (r.right < c.L - 30 || r.left > c.R + 30 || r.bottom < c.T - 30 || r.top > c.B + 30) continue;
         const walker = document.createTreeWalker(e, NodeFilter.SHOW_TEXT);
         const nodes = [];
-        for (let n; (n = walker.nextNode()); ) if (n.nodeValue.trim() && !splitDone.has(n) && !n.parentElement.closest(".cw, [data-cat], [data-cat-skip]") && !inUnit(n)) nodes.push(n);
+        for (let n; (n = walker.nextNode()); ) if (n.nodeValue.trim() && !splitDone.has(n) && !n.parentElement.closest(".cww, [data-cat], [data-cat-skip]") && !inUnit(n)) nodes.push(n);
         for (const n of nodes) {
+          // one span per letter so the cat parts text character by character; a nowrap word wrapper
+          // keeps the inline-block letters from wrapping mid-word
+          const block = n.parentElement.closest(BLOCK) || n.parentElement;
+          const letters = [];
           const pieces = n.nodeValue.split(/(\s+)/).filter(Boolean).map((t) => {
             if (/^\s+$/.test(t)) return document.createTextNode(t);
             const w = document.createElement("span");
-            w.className = "cw"; w.textContent = t; w._dx = 0;
+            w.className = "cww";
+            for (const ch of t) {
+              const l = document.createElement("span");
+              l.className = "cw"; l.textContent = ch; l._dx = 0; l._block = block;
+              w.append(l); letters.push(l);
+            }
             return w;
           });
-          const block = n.parentElement.closest(BLOCK) || n.parentElement;
-          for (const p of pieces) p._block = block;
           splitDone.add(n);
           n.replaceWith(...pieces);
-          splits.push({ original: n, pieces, words: pieces.filter((p) => p.nodeType === 1), near: now });
+          splits.push({ original: n, pieces, words: letters, near: now });
         }
       }
     };
